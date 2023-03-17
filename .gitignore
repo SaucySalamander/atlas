@@ -1,0 +1,5 @@
+/target
+.vscode
+ledger/data
+*.sql
+*.data
