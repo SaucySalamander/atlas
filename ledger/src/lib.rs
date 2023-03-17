@@ -5,11 +5,11 @@ use transaction::protos::Transaction;
 mod transaction;
 mod io;
 
-pub fn init() -> PathBuf {
+pub fn init() {
     let result = io::create_ledger();
     match result {
         Err(_) =>  panic!("Failed to create ledger files") ,
-        Ok(p) => return p,
+        Ok(_) => (),
     }
 }
 
@@ -21,8 +21,6 @@ pub fn create_transaction() {
     let transaction = transaction::create();
     let bytes = transaction::serialize_transaction(&transaction);
     io::write_record(&bytes);
-
-
 }
 
 pub fn update_ledger() {

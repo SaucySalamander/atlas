@@ -12,3 +12,4 @@ members = [
 
 [dependencies]
 ledger = {path = "./ledger"}
+clap = { version = "4.1.9", features=["derive"]}
